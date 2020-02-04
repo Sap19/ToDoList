@@ -9,15 +9,19 @@
     </head>
     <body>
         <div id="vueApp">
-            <h4> List of things to do!</h4>
-            <ul v-bind:key="List.id">
-                <li>{{List.Item}}</li>
-            </ul>
-
+        
+            
             <h3>Write Item To add in text box below!</h3>
             <h1 class="welcome">{{welcomeMessage}}</h1>
-            <input class="welcome" v-model="welcomeMessage" />
-            <button>Adding</button>
+            <input class="welcome" v-model="newItem" v-on:keyup.enter='AddingItem'/>
+            <button @click.pervent="AddingItem">Adding</button>
+            <h4> List of things to do!</h4>
+            <ul v-for="lists in list" v-bind:key="list.id">
+                <li>
+                    <input type="checkbox"/> 
+                    {{lists.item}} <input type="checkbox"/> 
+                </li>
+            </ul>
         </div>
 
 
