@@ -14,18 +14,19 @@
             <h3 class="heads">Write Item To add in text box below!</h3 >
             <input class="boxinput" v-model="newItem" v-on:keyup.enter='AddingItem'/>
             <div class="button">
-                <button @click.pervent="AddingItem">Adding</button>
+                <button @click.pervent="AddingItem" >Adding</button>
+                
             </div>
             <h4 class="heads"> List of things to do!</h4>
             <div class="items" v-for="(listItem, index) in list" v-bind:key="list.id">
                 
                     <div class="">
-                    {{listItem.item}}
+                        {{listItem.item}}
                     </div>
 
                     <div>
                     <ul>
-                        <input type="checkbox" v-model="listItem.checked" @click="Completed">
+                        <input type="checkbox" v-model="listItem.checked">
                         <label v-if="listItem.checked == true"> Completed!</label>
                         <label v-else='listItem.checked == false'>Not Completed!</label>
                         

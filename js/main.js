@@ -4,9 +4,6 @@ let app = new Vue({
         list:[
             {id:1, item:'test', checked:false}
         ],
-        label:[
-            {text:'Not complete'}
-        ],
         welcomeMessage: '',
         newItem: '',
         checked: false,
@@ -20,6 +17,7 @@ let app = new Vue({
             {
                 const newList = {id:id,item:this.newItem, checked:false}
                 this.list.push(newList)
+    
                 this.Save()
             }
         },
@@ -28,11 +26,7 @@ let app = new Vue({
            this.list.splice(index,1)
            this.Save();
        },
-       Completed:function()
-       {
-           app.list.checked = !app.checked
-           app.label.text = app.checked ? 'Not complete' : 'Complete';
-       },
+      
        Save:function()
         {
         const parsed = JSON.stringify(this.list);
