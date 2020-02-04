@@ -1,9 +1,13 @@
 let app = new Vue({
     el: "#vueApp",
     data: {
-        list:[],
+        list:[
+            {id:1, item:'test', checked:true}
+        ],
+        checkedId:[],
         welcomeMessage: '',
-        newItem: ''
+        newItem: '',
+        checked: '',
     },
     methods: {
         AddingItem:function()
@@ -11,10 +15,12 @@ let app = new Vue({
             let id = this.list.lenght + 1
             if (this.newItem !== '')
             {
-                const newList = {id:id,item:this.newItem, checkbox:this.checkbox}
+                const newList = {id:id,item:this.newItem}
                 this.list.push(newList)
             }
-        }
+        },
+       
+       
     },
     mounted() {
 

@@ -16,10 +16,12 @@
             <input class="welcome" v-model="newItem" v-on:keyup.enter='AddingItem'/>
             <button @click.pervent="AddingItem">Adding</button>
             <h4> List of things to do!</h4>
-            <ul v-for="lists in list" v-bind:key="list.id">
+            <ul v-for="listItem in list" v-bind:key="list.id">
                 <li>
-                    <input type="checkbox"/> 
-                    {{lists.item}} <input type="checkbox"/> 
+                    {{listItem.item}}
+                    <input type="checkbox" v-model="listItem.checked"> 
+                    <label for="checkbox">Not Complete</label>
+
                 </li>
             </ul>
         </div>
