@@ -1,8 +1,13 @@
-h1.welcome {
+h1.title{
+    text-align: center;
+    color: darksalmon;
+    
+}
+.heads {
     text-align: center;
 
 }
-input.welcome {
+input.boxinput {
     margin-left: auto;
     margin-right: auto;
     width: 200px;
@@ -10,4 +15,23 @@ input.welcome {
     padding: 10px;
     font-size: 24px;
     text-align: center;
+}
+.items{
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+.complete{
+    text-decoration: line-through;
+    color: darksalmon;
+}
+.button{
+    display: block;
+    margin: 0 auto;
+    width: 5%;
+}
+body{
+    background-color: lavender;
 }

@@ -10,20 +10,33 @@
     <body>
         <div id="vueApp">
         
-            
-            <h3>Write Item To add in text box below!</h3>
-            <h1 class="welcome">{{welcomeMessage}}</h1>
-            <input class="welcome" v-model="newItem" v-on:keyup.enter='AddingItem'/>
-            <button @click.pervent="AddingItem">Adding</button>
-            <h4> List of things to do!</h4>
-            <ul v-for="listItem in list" v-bind:key="list.id">
-                <li>
+            <h1 class="title">To Do List</h1>
+            <h3 class="heads">Write Item To add in text box below!</h3 >
+            <input class="boxinput" v-model="newItem" v-on:keyup.enter='AddingItem'/>
+            <div class="button">
+                <button @click.pervent="AddingItem">Adding</button>
+            </div>
+            <h4 class="heads"> List of things to do!</h4>
+            <div class="items" v-for="(listItem, index) in list" v-bind:key="list.id">
+                
+                    <div class="">
                     {{listItem.item}}
-                    <input type="checkbox" v-model="listItem.checked"> 
-                    <label for="checkbox">Not Complete</label>
+                    </div>
 
-                </li>
-            </ul>
+                    <div>
+                    <ul>
+                        <input type="checkbox" v-model="listItem.checked" @click="Completed">
+                        <label v-if="listItem.checked == true"> Completed!</label>
+                        <label v-else='listItem.checked == false'>Not Completed!</label>
+                        
+                    </ul>
+                    </div>
+
+                    <div class="remove-item" @click="removeItem(index)">
+                        &times;
+                    </div>
+                
+            </div>
         </div>
 
 
